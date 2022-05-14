@@ -31,6 +31,20 @@ const prisma = new PrismaClient();
 		lifeExpectancy: '30 to 50 years',
       },
     });
+    const manati = await prisma.species.upsert({
+      where: { name: 'Manati' },
+      update: {},
+      create: {
+        name: 'Manití',
+        cientificName: 'Trichechus manatus',
+		region: 'Lower wetlands',
+		minWeight: 450,
+		maxWeight: 550,
+		color: 'Gray',
+		diet: 'Herbivore',
+		lifeExpectancy: '60 years',
+      },
+    });
 
     console.log('Adding new data to the database...');
   } catch(e) {
