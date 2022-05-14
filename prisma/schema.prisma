@@ -21,3 +21,10 @@ model species {
   diet String @db.VarChar(65)
   lifeExpectancy String @db.VarChar(165)
 }
+
+model about_region {
+  id Int @id @default(autoincrement())
+  population Int 
+  status Boolean 
+  location String @db.VarChar(165) 
+}
