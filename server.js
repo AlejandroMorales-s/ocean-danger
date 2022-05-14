@@ -25,6 +25,13 @@ app.get('/animals/:id', async (req, res) => {
     res.json(animal);
 });
 
+//* Endpoint para obtener un animal por su id
+app.get('/animals/:id', async (req, res) => {
+    const id = req.params.id;
+    const animal = await prisma.species.findUnique({where: {id: parseInt(id)}});
+    res.json(animal);
+});
+
 app.listen(port, () => {
     console.log(`Ocean in Danger on port: ${port}`);
 });
