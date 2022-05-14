@@ -18,5 +18,6 @@ model species {
   maxWeight Int
   minWeight Int
   color String @db.VarChar(65)
-  feeding String @db.VarChar(165)
+  diet String @db.VarChar(65)
+  lifeExpectancy String @db.VarChar(165)
 }
