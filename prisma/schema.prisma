@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model species {
+  id Int @id @default(autoincrement())
+  name String @unique
+  cientificName String @db.VarChar(155)
+  region String @db.VarChar(65)
+  maxWeight Int
+  minWeight Int
+  color String @db.VarChar(65)
+  feeding String @db.VarChar(165)
+}
