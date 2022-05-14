@@ -17,6 +17,20 @@ const prisma = new PrismaClient();
 		lifeExpectancy: '20 to 30 years',
       },
     });
+    const tortugaCarey = await prisma.species.upsert({
+      where: { name: 'Tortuga Carey' },
+      update: {},
+      create: {
+        name: 'Tortuga Carey',
+        cientificName: 'Eretmochleys',
+		region: 'Port Veracruz',
+		minWeight: 45,
+		maxWeight: 68,
+		color: 'Black and white',
+		diet: 'Omnivore',
+		lifeExpectancy: '30 to 50 years',
+      },
+    });
 
     console.log('Adding new data to the database...');
   } catch(e) {
