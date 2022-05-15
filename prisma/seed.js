@@ -35,6 +35,22 @@ const prisma = new PrismaClient();
     description: 'The blue whale is an extremely large marine mammal, with a long, torpedo-shaped body. They have blue-gray colored skin, with a slightly lighter colored underside; they have two pectoral fins, a small dorsal fin on their backs, and a large fluke.',
       },
     });
+    const delfinCabezaBlanca = await prisma.species.upsert({
+      where: { name: 'Delfín Cabeza Blanca' },
+      update: {},
+      create: {
+        name: 'Delfín Cabeza Blanca',
+        cientificName: 'Cephalorhynchus hectori',
+		region: 'Nueva Zelanda',
+		minWeight: 40,
+		maxWeight: 60,
+		color: 'Gray and white',
+		diet: 'Carnivore',
+		lifeExpectancy: '20 years',
+    url: "https://i.pinimg.com/originals/f9/53/a9/f953a96a525edacc35fb6f503edd3463.jpg",
+    description: "The Hector's dolphin is the smallest member of the family Delphinidae. Adults range in length from 1.2 to 1.6 m and weigh 40 to 60 kg.3 The species has slight sexual dimorphism, with females being slightly larger and heavier than males. The body shape is robust with no distinguishable beak or snout. The Hector's dolphin has a rounded dorsal fin and concave edges. The overall color is a pale gray but closer inspection reveals a complex chromatic upholstery. The forehead is gray with black highlights and the tip of the snout is black. The chest and belly are white, and on them a dark gray line runs from the flippers to the eyes. Another band runs from the sides to the dorsal fin."
+      },
+    });
     
     console.log('Adding new data to the database...');
   } catch(e) {
