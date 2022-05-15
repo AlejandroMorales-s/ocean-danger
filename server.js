@@ -33,7 +33,7 @@ app.get('/animals/name/:name', async (req, res) => {
         const animal = AnimalsController.getAnimalsByName(name);
         res.json(animal);
     } catch (error) {
-        res.json({message: "Not animal found"});
+        res.json({message: error.message});
     }
 });
 
