@@ -83,6 +83,38 @@ const prisma = new PrismaClient();
       description: 'fusiform and rounded body, very hydrodynamic. On each side of the caudal peduncle is a well-developed keel. The mouth is small, with small conical teeth and pointed snout. It has 35 - 41 gill plates. Two fairly close dorsal fins, the first with 12 - 15 spiny rays and the second with 1 or 2 spiny, 12 - 14 soft rays, with 8-10 pinnules before the caudal fin. The pectoral fins are much shorter than in bonito, not reaching beyond the second dorsal fin. Anal fin with 12-15 soft rays and 7-9 pinnules between it and the caudal fin, large and forked. The back is dark blue and the belly is silver. First dorsal fin is yellowish, second dorsal fin is reddish brown and the anal fin is blackish with yellowish tones. The pinnules are yellowish with a blackish line. ',
       },
       });
+      const rocualComun = await prisma.species.upsert({
+        where: { name: 'Fin Whale' },
+        update: {},
+        create: {
+          name: 'Fin Whale',
+          cientificName: 'Balaenoptera physalus',
+      region: 'North Atlantic',
+      minWeight: 88450,
+      maxWeight: 99790,
+      color: 'White',
+      diet: 'Plankton',
+      lifeExpectancy: '114 years',
+      url: 'https://www.chiledesarrollosustentable.cl/wp-content/uploads/2018/12/ballena-rorcual-III.jpg',
+      description: 'The fin whale (Balaenoptera physalus), also known as finback whale or common rorqual and formerly known as herring whale or razorback whale, is a cetacean belonging to the parvorder of baleen whales.',
+        },
+      });
+      const tortugaCarey = await prisma.species.upsert({
+        where: { name: 'Carey Turtle' },
+        update: {},
+        create: {
+          name: 'Hawksbill Sea Turtle',
+          cientificName: 'Eretmochelys',
+      region: 'Veracruz',
+      minWeight: 45,
+      maxWeight: 90,
+      color: 'Brown',
+      diet: 'Plants or Other',
+      lifeExpectancy: '30 and 50 years',
+      url: 'https://img.freepik.com/foto-gratis/tortuga-carey-eretmochelys-imbricata-flota-agua-arrecife-coral-oceano-indico-maldivas_564276-3.jpg',
+      description: 'The hawksbill sea turtle is a marine turtle which is distributed in tropical areas, as well as is subtropical waters of the Atlantic, Indian and Pacific oceans. It’s an animal which journeys far and wide that is capable of nesting in at least 70 countries in the world.',
+        },
+      });
     
     console.log('Adding new data to the database...');
   } catch(e) {
