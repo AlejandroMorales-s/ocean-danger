@@ -1,3 +1,4 @@
+const AnimalsController = require("./lib/controllers/animalsController");
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -25,10 +26,10 @@ app.get('/animals/:id', async (req, res) => {
     res.json(animal);
 });
 
-//* Endpoint para obtener un animal por su id
-app.get('/animals/:id', async (req, res) => {
-    const id = req.params.id;
-    const animal = await prisma.species.findUnique({where: {id: parseInt(id)}});
+//* Endpoint para obtener un animal por su nombre
+app.get('/animals/name/:name', async (req, res) => {
+    const name = req.params.name;
+    const animal = AnimalsController.getAnimalsByName(name);
     res.json(animal);
 });
 
