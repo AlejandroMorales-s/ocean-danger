@@ -1,0 +1,5 @@
+[
+    {"id":1,"name":"Tiburón Martillo Gigante","cientificName":"Sphyrna mokarran","region":"Golfo de México","maxWeight":450,"minWeight":230,"color":"Gray","diet":"Carnivore","lifeExpectancy":"20 to 30 years"},
+    {"id":2,"name":"Tortuga Carey","cientificName":"Eretmochleys","region":"Port Veracruz","maxWeight":68,"minWeight":45,"color":"Black and white","diet":"Omnivore","lifeExpectancy":"30 to 50 years"},
+    {"id":3,"name":"Manití","cientificName":"Trichechus manatus","region":"Lower wetlands","maxWeight":550,"minWeight":450,"color":"Gray","diet":"Herbivore","lifeExpectancy":"60 years"}
+]
