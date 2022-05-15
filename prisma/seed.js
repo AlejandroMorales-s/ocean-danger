@@ -131,7 +131,55 @@ const prisma = new PrismaClient();
         description: 'The Steller (or northern) sea lion is an impressive animal. Males reach full size at about eight years of age and, at that time, can weigh nearly 1300 pounds. What makes them most imposing is that they can move around on land, appearing to "walk," gliding on their giant flippers. Steller sea lions are not much smaller than the males, but they weigh much less. They are called "lions" because, like lions in Africa, their necks and shoulders are disproportionately larger than the rest of their bodies. Sea lions gather in huge groups in colonies during the summer. The colonies are uncovered rocky outcrops where the animals enjoy the sun and sometimes slide into the water to feed. Males are very competitive in mating with females, and while male sea lions can breed at around three years of age, many do not actually breed until they are several years older due to competition with older, larger males.',
         },
         });
-    
+        const tortugaCaguama = await prisma.species.upsert({
+          where: { name: 'Loggerhead Turtle' },
+          update: {},
+          create: {
+            name: 'Loggerhead Turtle',
+            cientificName: 'Caretta caretta',
+        region: 'Newfoundland to Argentina',
+        minWeight: 80,
+        maxWeight: 200,
+        color: 'Brown',
+        diet: 'Crab',
+        lifeExpectancy: 'Up to 100 years',
+        url: 'https://t1.ev.ltmcdn.com/es/posts/7/5/3/por_que_esta_en_peligro_de_extincion_la_tortuga_caguama_2357_orig.jpg',
+        description: 'Loggerhead turtles have large heads with powerful jaws. The top shell (carapace) is slightly heart-shaped and reddish-brown in adults and sub-adults, while the bottom shell (plastron) is generally a pale yellowish color.',
+          },
+        });
+        const totaba = await prisma.species.upsert({
+          where: { name: 'Totoaba' },
+          update: {},
+          create: {
+            name: 'Totoaba',
+            cientificName: 'Totoaba macdonaldi',
+        region: 'Alto Golfo de California',
+        minWeight: 50,
+        maxWeight: 100,
+        color: 'Blue',
+        diet: 'small crustaceans',
+        lifeExpectancy: '25 years',
+        url: 'https://t1.ev.ltmcdn.com/es/posts/7/5/3/por_que_esta_en_peligro_de_extincion_la_tortuga_caguama_2357_orig.jpg',
+        description: 'The totoaba or totuava (Totoaba macdonaldi) is a species of marine fish, a very large member of the drum family Sciaenidae that is endemic to the Gulf of California in Mexico.[3] It is the only species in the genus Totoaba.',
+          },
+        });
+        const vaquitaMarina = await prisma.species.upsert({
+          where: { name: 'Dolphin Cow' },
+          update: {},
+          create: {
+            name: 'Dolphin Cow',
+            cientificName: 'Phocoena sinus',
+        region: 'Gulf of California',
+        minWeight: 43,
+        maxWeight: 50,
+        color: 'Dark Gray',
+        diet: 'Carnivore',
+        lifeExpectancy: '20 years',
+        url: 'https://www.elsoldehermosillo.com.mx/doble-via/ecologia/t0wvxa-vaquita-marina/ALTERNATES/LANDSCAPE_1140/Vaquita%20marina',
+        description: 'The Vaquita is the only marine mammal native to Mexico and the smallest of the cetaceans. It is robust, with long and concave pectoral fins; high, triangular and slightly falcate (curved backwards) dorsal fin. Its head is rounded and its snout is short.',
+          },
+        });
+        
     console.log('Adding new data to the database...');
   } catch(e) {
     console.error(e);
