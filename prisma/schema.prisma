@@ -20,6 +20,7 @@ model species {
   color String @db.VarChar(65)
   diet String @db.VarChar(65)
   lifeExpectancy String @db.VarChar(165)
+  url String 
 }
 
 model about_region {
