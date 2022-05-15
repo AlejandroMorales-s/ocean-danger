@@ -21,6 +21,7 @@ model species {
   diet String @db.VarChar(65)
   lifeExpectancy String @db.VarChar(165)
   url String 
+  description String
 }
 
 model about_region {
