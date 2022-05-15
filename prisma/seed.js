@@ -67,6 +67,22 @@ const prisma = new PrismaClient();
     description: "The fin whale has an elongated and hydrodynamic body with a falciform dorsal fin located on the posterior third of the body. The caudal fin ends sharply and has a gray crest. The average length is usually 18 meters. Females are longer than males and can reach a length of about 19 meters. They can weigh up to 90 tons. The fin whale has a dark gray back and sides and a white belly. Their baleen has 260 to 480 blades on each side of the mouth, dark almost black in color, except for those in front of the right side, which are white. The ventral folds reach approximately to the navel and range from 50 to 100. The most notable characters that differentiate them from other species are the asymmetrical coloration of the left lower jaw, which is usually darker than the right, the white supra-mandibular spot and the V-shaped spot between the two spiracle openings; as well as the scars on the posterior margin of the caudal fin and the wounds along the body due to confrontations with other individuals. Another distinctive feature is the blow that can form a column of a height between 4 and 6 meters."
       },
     });
+    const redTuna = await prisma.species.upsert({
+      where: { name: 'Red tuna' },
+      update: {},
+      create: {
+        name: 'Red tuna',
+        cientificName: 'Thunnus thynnus',
+      region: 'The Atlantic Ocean and adjacent seas.',
+      minWeight: 220,
+      maxWeight: 250,
+      color: 'Gray',
+      diet:'carnivore',
+      lifeExpectancy: '15 years',
+      url: 'https://www.iucn.org/sites/dev/files/styles/850x500_no_menu_article/public/import/img/atlantic_bluefin_tuna_thunnus_thynnus_oceana_keith_ellenbogen.jpg?itok=NzFmzQO9',
+      description: 'fusiform and rounded body, very hydrodynamic. On each side of the caudal peduncle is a well-developed keel. The mouth is small, with small conical teeth and pointed snout. It has 35 - 41 gill plates. Two fairly close dorsal fins, the first with 12 - 15 spiny rays and the second with 1 or 2 spiny, 12 - 14 soft rays, with 8-10 pinnules before the caudal fin. The pectoral fins are much shorter than in bonito, not reaching beyond the second dorsal fin. Anal fin with 12-15 soft rays and 7-9 pinnules between it and the caudal fin, large and forked. The back is dark blue and the belly is silver. First dorsal fin is yellowish, second dorsal fin is reddish brown and the anal fin is blackish with yellowish tones. The pinnules are yellowish with a blackish line. ',
+      },
+      });
     
     console.log('Adding new data to the database...');
   } catch(e) {
