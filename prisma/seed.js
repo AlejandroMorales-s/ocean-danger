@@ -51,22 +51,6 @@ const prisma = new PrismaClient();
     description: "The Hector's dolphin is the smallest member of the family Delphinidae. Adults range in length from 1.2 to 1.6 m and weigh 40 to 60 kg.3 The species has slight sexual dimorphism, with females being slightly larger and heavier than males. The body shape is robust with no distinguishable beak or snout. The Hector's dolphin has a rounded dorsal fin and concave edges. The overall color is a pale gray but closer inspection reveals a complex chromatic upholstery. The forehead is gray with black highlights and the tip of the snout is black. The chest and belly are white, and on them a dark gray line runs from the flippers to the eyes. Another band runs from the sides to the dorsal fin."
       },
     });
-    const rorcualComun = await prisma.species.upsert({
-      where: { name: 'Rorual Comun' },
-      update: {},
-      create: {
-        name: 'Rorual Comun',
-        cientificName: 'Balaenoptera physalus',
-		region: 'west of Corsica, Sardinia, Sicily and in the Ligurian Sea.',
-		minWeight: 1800,
-		maxWeight: 17000,
-		color: 'Dark Gray',
-		diet: 'Ominvore',
-		lifeExpectancy: '80 and 90 years',
-    url: "https://www.chiledesarrollosustentable.cl/wp-content/uploads/2018/12/ballena-rorcual-III.jpg",
-    description: "The fin whale has an elongated and hydrodynamic body with a falciform dorsal fin located on the posterior third of the body. The caudal fin ends sharply and has a gray crest. The average length is usually 18 meters. Females are longer than males and can reach a length of about 19 meters. They can weigh up to 90 tons. The fin whale has a dark gray back and sides and a white belly. Their baleen has 260 to 480 blades on each side of the mouth, dark almost black in color, except for those in front of the right side, which are white. The ventral folds reach approximately to the navel and range from 50 to 100. The most notable characters that differentiate them from other species are the asymmetrical coloration of the left lower jaw, which is usually darker than the right, the white supra-mandibular spot and the V-shaped spot between the two spiracle openings; as well as the scars on the posterior margin of the caudal fin and the wounds along the body due to confrontations with other individuals. Another distinctive feature is the blow that can form a column of a height between 4 and 6 meters."
-      },
-    });
     const redTuna = await prisma.species.upsert({
       where: { name: 'Red tuna' },
       update: {},
@@ -115,6 +99,38 @@ const prisma = new PrismaClient();
       description: 'The hawksbill sea turtle is a marine turtle which is distributed in tropical areas, as well as is subtropical waters of the Atlantic, Indian and Pacific oceans. It’s an animal which journeys far and wide that is capable of nesting in at least 70 countries in the world.',
         },
       });
+      const manati = await prisma.species.upsert({
+        where: { name: 'Manatí' },
+        update: {},
+        create: {
+          name: 'Manatí',
+          cientificName: 'Trichechus manatus',
+        region: 'Lower wetlands',
+        minWeight: 550,
+        maxWeight: 450,
+        color: 'Gray',
+        diet:'Herbivore',
+        lifeExpectancy: '60 years',
+        url: 'https://images.app.goo.gl/cQSn9HSsemFkQsfHA',
+        description: 'It is a corpulent animal that has a pisciform appearance with a rounded terminal fin in the shape of a spatula. Its skin is finely wrinkled, five centimeters thick, usually covered by algae and small mollusks. The head is broadened and joined without neck and shoulders. With no hind limbs, manatees have flexible, paddle-like forelimbs, or flippers, which are used to assist in moving along the bottom, scratching, touching and even hugging other manatees, to move food inward and to facilitate cleaning of the mouth. Like other manatees, it is a species completely adapted to aquatic life, having no limbs on the back of its body. The distribution of fur on its body is sparse, which prevents the accumulation of algae on the skin. It is approximately 3 meters long, and weighs between 400 and 600 kilograms, with females generally being larger than males. The largest manatees can weigh up to 1500 kilograms and measure up to 4.6 meters. Their skin color can vary from gray to brown. Their flippers have 3 or 4 claws, which serve to hold food when foraging.',
+        },
+        });
+      const LeonMarinoDeSteller = await prisma.species.upsert({
+        where: { name: 'León Marino de Steller' },
+        update: {},
+        create: {
+          name: 'León Marino de Steller',
+          cientificName: 'Eumetopias jubatus',
+        region: 'Aleutian Islands and the Bering Sea to the west.',
+        minWeight: 100,
+        maxWeight: 350,
+        color: 'Dark brown',
+        diet:'Carnivore',
+        lifeExpectancy: '30 years',
+        url: 'http://pm1.narvii.com/7132/4fa7e876a59e0ab59a56d2d229a1ec1d8ee0dbbbr1-768-512v2_uhq.jpg',
+        description: 'The Steller (or northern) sea lion is an impressive animal. Males reach full size at about eight years of age and, at that time, can weigh nearly 1300 pounds. What makes them most imposing is that they can move around on land, appearing to "walk," gliding on their giant flippers. Steller sea lions are not much smaller than the males, but they weigh much less. They are called "lions" because, like lions in Africa, their necks and shoulders are disproportionately larger than the rest of their bodies. Sea lions gather in huge groups in colonies during the summer. The colonies are uncovered rocky outcrops where the animals enjoy the sun and sometimes slide into the water to feed. Males are very competitive in mating with females, and while male sea lions can breed at around three years of age, many do not actually breed until they are several years older due to competition with older, larger males.',
+        },
+        });
     
     console.log('Adding new data to the database...');
   } catch(e) {
