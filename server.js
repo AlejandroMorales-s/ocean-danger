@@ -29,12 +29,8 @@ app.get('/animals/:id', async (req, res) => {
 //* Endpoint para obtener un animal por su nombre
 app.get('/animals/name/:name', async (req, res) => {
     const name = req.params.name;
-    try {
-        const animal = AnimalsController.getAnimalsByName(name);
-        res.json(animal);
-    } catch (error) {
-        res.json({message: error.message});
-    }
+    const animal = AnimalsController.getAnimalsByName(name);
+    res.json(animal);
 });
 
 app.listen(port, () => {
