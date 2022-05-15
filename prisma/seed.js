@@ -15,34 +15,8 @@ const prisma = new PrismaClient();
 		color: 'Gray',
 		diet: 'Carnivore',
 		lifeExpectancy: '20 to 30 years',
-      },
-    });
-    const tortugaCarey = await prisma.species.upsert({
-      where: { name: 'Tortuga Carey' },
-      update: {},
-      create: {
-        name: 'Tortuga Carey',
-        cientificName: 'Eretmochleys',
-		region: 'Port Veracruz',
-		minWeight: 45,
-		maxWeight: 68,
-		color: 'Black and white',
-		diet: 'Omnivore',
-		lifeExpectancy: '30 to 50 years',
-      },
-    });
-    const manati = await prisma.species.upsert({
-      where: { name: 'Manati' },
-      update: {},
-      create: {
-        name: 'Manití',
-        cientificName: 'Trichechus manatus',
-		region: 'Lower wetlands',
-		minWeight: 450,
-		maxWeight: 550,
-		color: 'Gray',
-		diet: 'Herbivore',
-		lifeExpectancy: '60 years',
+    url: "https://static.nationalgeographic.es/files/styles/image_3200/public/Tibur%C3%B3n%20martillo%2002.webp?w=768",
+    description: "The most striking feature of all hammerhead shark species is the particular shape of the T-shaped head, with the eyes and nostrils located at the ends of the head, thanks to which the side-to-side head movement when swimming, it can see everything around it and even what is behind it. The pectoral fins are located behind the gills, and the caudal fin has a black tip. Almost the entire dorsal part is gray or brown, but turns white near the ventral part. Like most sharks, hammerheads have counter-coloration, i.e. a dark color on the back and a light color on the belly. Seen from below, the hammerhead blends in with the brightness of the surface waters; seen from above, it blends in with the dark seafloor. Counter-coloration is a type of mimicry that allows the shark to surprise its prey."
       },
     });
 
